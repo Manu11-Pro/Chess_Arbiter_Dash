@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
 import time
+from logic import is_token_valid
 
 st.title("♟Chess_Arbiter_Dash♟")
 st.markdown("## Welcome to Chess_Arbiter_Dash!")
 
-add_game_bt = st.sidebar.button("+ Add Game")
-token_bt = st.sidebar.button("Insert Your Token")
+add_game_bt = st.sidebar.button("+ Add Game", key="add_game_bt")
+token_bt = st.sidebar.button("Insert Your Token", key="token_bt")
 game_add = False
 typed_in_both = False
 
@@ -33,12 +34,21 @@ if "token_container" not in st.session_state:
 if token_bt == True:
     st.session_state.token_container = True
 
-if st.session_state.get("token_container"):
-    with st.container(key="token_input", border=True, autoscroll=True):
-            token = st.text_input(label="Insert Your Token", value="", placeholder="Token")
+if "valid_token" not in st.session_state:
+    st.session_state.valid_token = False
 
-# if st.button("Confirm Token")== True:
-#      print
+if st.session_state.get("token_container"):
+     with st.container(key="token_input", border=True, autoscroll=True):
+            token = st.text_input(label="Insert Your Token", value="", placeholder="Token", type="password")
+            if st.button("Confirm Token", key="confirm_token_bt")== True:
+                if is_token_valid(token):
+                      st.session_state.valid_token = True
+                      st.session_state.token_container = False
+                      st.success("Valid Token!")
+                      st.rerun()
+                else:
+                    st.error("Invalid Token, Retry!")
+
 
 #CSS
 

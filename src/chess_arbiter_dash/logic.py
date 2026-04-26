@@ -1,12 +1,13 @@
 import berserk
-from utils import player_1, player_2, token
 
-def is_token_valid():
-    print
+def is_token_valid(tokenstr):
+    client = berserk.Client(berserk.TokenSession(tokenstr))
+    try:
+        client.account.get()
+        return True
+    except:
+        return False
 
 def is_username_valid(p1, p2):
     print
-
-
-print(player_1, player_2)
     
