@@ -12,6 +12,9 @@ game_add = False
 typed_in_both = False
 
 #Add & View Game
+if "present_games" not in st.session_state:
+    st.session_state.present_games = []
+
 if "usernames_container" not in st.session_state:
     st.session_state.usernames_container = False
 
