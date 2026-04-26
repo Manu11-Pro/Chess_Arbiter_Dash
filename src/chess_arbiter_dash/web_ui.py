@@ -35,7 +35,7 @@ if token_bt == True:
 
 if st.session_state.get("token_container"):
     with st.container(key="token_input", border=True, autoscroll=True):
-            player_1 = st.text_input(label="Insert Your Token", value="", placeholder="Token")
+            token = st.text_input(label="Insert Your Token", value="", placeholder="Token")
 
 # if st.button("Confirm Token")== True:
 #      print
