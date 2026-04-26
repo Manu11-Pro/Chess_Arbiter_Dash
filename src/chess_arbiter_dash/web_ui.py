@@ -20,10 +20,12 @@ if st.session_state.get("usernames_container"):
     with st.container(key="usernames_input", border=True, autoscroll=True):
             player_1 = st.text_input(label="Type Username of the player1", value="", placeholder="Username")
             player_2 = st.text_input(label="Type Username of the player2", value="", placeholder="Username")
-            typed_in_both = st.button("See Game")
+            st.button("See Game")
             
-if typed_in_both == True:
-     st.session_state.usernames_container = False
+# if _ == True:
+#      st.session_state.usernames_container = False
+#      with st.container(key="game_view", border=True, autoscroll=True):
+#           st.markdown("View the Game!")
      
 
 #CSS
@@ -34,6 +36,12 @@ st.markdown("""
             width: 50%;
             height: 25vh;
             border: 10px solid #FFFFFF;
-        }    
+        }   
+
+        .game_view{
+            width: 50%;
+            height: 25vh;
+            border: 10px solid #FFFFFF;
+        }  
     </style>
 """, unsafe_allow_html=True)

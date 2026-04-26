@@ -1,5 +1,5 @@
 import berserk
-from utils import game_add
+from utils import player_1, player_2
 
-if game_add == True:
-    print()
+print(player_1, player_2)
+    
