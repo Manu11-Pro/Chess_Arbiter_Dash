@@ -1,0 +1,18 @@
+[project]
+name = "Chess_Arbiter_Dash"
+version = "0.1.0"
+description = "Dashboard for Chess Arbiters"
+readme = "README.md"
+authors = [
+    { name = "Manu11-Pro" }
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/Manu11-Pro/Chess_Arbiter_Dash"
